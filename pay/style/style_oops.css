@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+  }
+  body{
+    background-color: #0064b4;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-rendering:optimizeLegibility;
+    overflow: hidden;
+  }
+
+  .centerbox{
+    position: absolute;
+    top: 38%;
+    left: 61%;
+    width: 450px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+
+  .bear{
+    width: 700px;
+    position: absolute;
+    top: 65%;
+    left: -44%;
+  }
+  /* css ripple */
+  .circle-ripple {
+    background-color: #1e76bd;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    -webkit-animation: rippleCircle 0.7s linear infinite;
+            animation: rippleCircle 0.7s linear infinite;
+  }
+  
+  @-webkit-keyframes rippleCircle {
+    0% {
+      box-shadow: 0 0 0 0 rgba(17, 112, 188, 0.3), 0 0 0 1em rgba(17, 112, 188, 0.3), 0 0 0 3em rgba(17, 112, 188, 0.3), 0 0 0 5em rgba(17, 112, 188, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 0 1em rgba(17, 112, 188, 0.3), 0 0 0 3em rgba(17, 112, 188, 0.3), 0 0 0 5em rgba(17, 112, 188, 0.3), 0 0 0 8em rgba(17, 112, 188, 0.3)
+    }
+  }
+  
+  @keyframes rippleCircle {
+    0% {
+      box-shadow: 0 0 0 0 rgba(17, 112, 188, 0.3), 0 0 0 1em rgba(17, 112, 188, 0.3), 0 0 0 3em rgba(17, 112, 188, 0.3), 0 0 0 5em rgba(17, 112, 188, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 0 1em rgba(17, 112, 188, 0.3), 0 0 0 3em rgba(17, 112, 188, 0.3), 0 0 0 5em rgba(17, 112, 188, 0.3), 0 0 0 8em rgba(17, 112, 188, 0.3);
+    }
+  }
+  /* sleep */
+
+  .zzz {
+    animation-name: zzz;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+    color: rgba(0,0,0,1);
+    font-weight: bold;
+    position: absolute;
+    z-index: 100;
+    transform: translateY(100%);
+    font-family: 'Concert One', cursive;
+}
+
+.zzz-z {
+    animation-delay: 0s;
+    right: 10px;
+}
+.zzz-zz {
+    animation-delay: 0.5s;
+    right: -20px;
+}
+.zzz-zzz {
+    animation-delay: 1s;
+    right: 0;
+}
+
+
+/* *** All Animations *** */
+/*Darker Sky*/
+
+#sleep{
+  position: absolute;
+  left: -182px;
+  top: 430px;
+}
+
+
+@-webkit-keyframes zzz {
+	0% {
+        color: rgba(0,0,0,0);
+        font-size: 20px;
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    100% {
+        color: rgba(0,0,0,1);
+        font-size: 20px;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes zzz {
+    0% {
+        color: rgba(160,84,246,0);
+        font-size: 20px;
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    100% {
+        color: rgba(0,0,0,1);
+        font-size: 30px;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+/* input text */
+.otpForm{
+  color: #fff;
+  margin-left: 40px;
+  margin-top: 50px;
+  width: 350px;
+  position: absolute;
+}
+
+.inputWithIcon input[type=text]{
+  width:350px;
+  height: 60px;
+  border:none;
+  margin:8px 0;
+  outline:none;
+  padding:8px;
+  box-sizing:border-box;
+  transition:.3s;
+}
+.inputWithIcon .greenbtn::before, .inputWithIcon .sha::before, .inputWithIcon .sha::after, .inputWithIcon .greenbtn:after{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  max-width:300px;
+  background: #04345b;;
+  -webkit-box-shadow: 0 15px 10px #04345b;
+  -moz-box-shadow: 0 15px 10px #04345b;;
+  box-shadow: 0 15px 10px #04345b;;
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+
+.inputWithIcon .sha::before, .inputWithIcon .sha::after  {
+  bottom: 139px;
+  left: 11px;
+  width: 50%;
+  top: 16px;
+}
+
+.inputWithIcon input[type=text]{
+  position: relative;
+  padding-left:40px;
+}
+
+.inputWithIcon{
+  position:relative;
+}
+
+.inputWithIcon i{
+  position: absolute;
+  left: 0;
+  top: 8px;
+  padding: 19px 8px;
+  color: dodgerblue;
+  transition: .3s;
+}
+
+.inputWithIcon input[type=text]:focus + i{
+  color:#aaa;
+}
+
+.inputWithIcon .greenbtn{
+  width: 350px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: #16be2a;
+  color: #fff;
+}
+
+.inputWithIcon .greenbtn::before, .inputWithIcon .greenbtn::after  {
+  bottom: 13px;
+  left: 11px;
+  width: 50%;
+  top: 80%;
+}
+
+.inputWithIcon .sha{
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  width: 100%; 
+}
+.otpForm h1, .otpForm  p {
+  font-family: "Roboto";
+}
+.otpForm .forget{
+  margin-bottom: 30px;
+}
+.otpForm .backLogin{
+  float: right;
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-size: 18px;
+}
+.otpForm .backLogin a{
+  color: #e5e5e5;
+  text-decoration: none;
+}
+
+.birdsMoving{
+  position: absolute;
+  top: 411px;
+  left: -45px;
+}
+.birds{
+  position: relative;
+  top: -272px;
+  left: 202px;
+  width: 150px;
+  height: 150px;
+  /* border: 1px solid #000; */
+}
+
+#blueBird, #greenBird, #orangeBird{
+  position: absolute;
+  margin: 5px;
+}

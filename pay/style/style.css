@@ -1,0 +1,501 @@
+/*
+background color code #f3edfd
+right side container color code #00569b to #004d89
+
+*/
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  border: 0px;
+}
+
+html{
+  /* overflow-y: scroll; 
+  overflow-x: scroll;  */
+}
+body{
+  background-color: #f3edfd;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  overflow-x: none;
+  text-rendering:optimizeLegibility;
+}
+/* wrapper and slider */
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  z-index: 5;
+}
+.overlay .revealer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.overlay .revealer:nth-child(1) {
+  z-index: 15;
+  background: linear-gradient(rgba(255, 255, 255, 1),rgba(243, 237, 253, 1));
+}
+.overlay .revealer:nth-child(2) {
+  z-index: 20;
+  background: linear-gradient(rgba(0, 93, 166, 1),rgba(0, 77, 137, 1));
+}
+
+.slideIn-1 {
+  -webkit-animation: slideIn-1 1.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: slideIn-1 1.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.slideIn-2 {
+  -webkit-animation: slideIn-2 1.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+  animation: slideIn-2 1.5s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+
+.extend {
+  transform: translateX(0);
+}
+
+.extend-more {
+  transform: translateX(100%);
+}
+
+.fadeOut {
+  animation: fadeOut 1s cubic-bezier(0.1, 0.86, 0.45, 1.01);
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.slideIn {
+  animation: slideIn 1s cubic-bezier(0.1, 0.86, 0.45, 1.01);
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideIn-1 {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  30%,
+	70% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  100% {
+    -webkit-transform: translate3d(200%, 0, 0);
+    transform: translate3d(200%, 0, 0);
+  }
+}
+@keyframes slideIn-2 {
+  0%,
+	14.5% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  37.5%,
+	62.5% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  85.5%,
+	100% {
+    -webkit-transform: translate3d(200%, 0, 0);
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+/* end */
+
+
+.ContainerLeft{
+  position: fixed;
+  width: 65%;
+  top: 0px;
+  height: 100vh;
+  float: left;
+  background: linear-gradient(rgba(255, 255, 255, 1),rgba(243, 237, 253, 1));
+}
+
+.ContainerRight{
+  position: relative;
+  width: 35%;
+  height: 100vh;
+  float: right;
+  /* background: linear-gradient(rgba(0, 93, 166, 1),rgba(0, 77, 137, 1)); */
+  /* animation: widthIn 1s cubic-bezier(0.1, 0.86, 0.45, 1.01); */
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#24b9f1, #00569b);
+  background-color: #24b9f1;
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
+}
+
+.character{
+  width: 400px;
+  height: 500px;
+  position: absolute;
+  left: -150px;
+  bottom: 0px;
+}
+/* main header */
+.ContainerLeft header{
+  margin: 25px 0px 0px 30px;
+}
+/*Main logo*/
+.ContainerLeft header .left .logo{
+  width: 116px;
+  height: auto;
+}
+/* logo and navigation menu float left and right */
+.ContainerLeft header .left{
+  float: left;
+}
+.ContainerLeft header .right{
+  float: right;
+  margin-right: 80px;
+}
+
+.ContainerLeft header .right .navMenu{
+  fill:#00569B;
+}
+.ContainerLeft header .right .navIcon{
+  width: 10px;
+  height: auto;
+}
+.ContainerLeft header .right .navText{
+  color:#00569b;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;;
+  margin-left: 5px;
+}
+/* login forum  */
+.ContainerLeft .mainLogin {
+    margin: 27px 0px 0px 30px;
+    position: relative;
+    z-index: 1;
+}
+.ContainerLeft .mainLogin .blueBox{
+  width: 60px;
+  height: 70px;
+  background-color: #00569b;
+  padding: 10px;
+  float: left;
+}
+.ContainerLeft .mainLogin .contentText{
+  display: inline-block;
+  float: left;
+  padding-left: 10px;
+}
+.ContainerLeft > .mainLogin .contentText > h4{
+color: #00569b;
+font-weight: 400;
+font-size: 22px;
+margin: 8px 0px;
+}
+.ContainerLeft > .mainLogin .contentText > p{
+  font-size: 15px;
+  color: #00569b;
+}
+.ContainerLeft .mainLogin .blueBox .user{
+  width: 35px;
+}
+.ContainerLeft .mainLogin .formBG{
+  width: 320px;
+  height: 200px;
+  background-color: #00569b;
+  position: relative;
+  /* box-shadow: -1px 12px 14px 0px #888888; */
+}
+
+.ContainerLeft .mainLogin .formBG form{
+  text-align: center;
+  /* position: relative;
+  z-index: 1; */
+}
+
+.ContainerLeft .mainLogin::before, .ContainerLeft .mainLogin:after  {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 11px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+
+
+
+.ContainerLeft .mainLogin .formBG form input{
+  width: 260px;
+  height: 35px;
+  background-color: #FFF;
+  margin-top: 20px;
+  padding-left: 10px;
+}
+
+
+.ContainerLeft .mainLogin .formBG form input::placeholder{
+    font-weight: 600;
+    color: #22284f;
+}
+
+.ContainerLeft .mainLogin .formBG form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-weight: 600;
+  color: #22284f;
+}
+
+.ContainerLeft .mainLogin .formBG form input::-ms-input-placeholder { /* Microsoft Edge */
+  font-weight: 600;
+  color: #22284f;
+}
+
+.ContainerLeft .mainLogin .formBG .formInput{
+      padding: 20px 0px 0px 0px;
+}
+.ContainerLeft .mainLogin .formBG .submit{
+  text-align:justify;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.ContainerLeft .mainLogin .formBG .submit button{
+  color: #fff;
+  background-color: #24b9f1;
+  width: 80px;
+  height: 35px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.ContainerLeft .mainLogin .formBG .submit .lostPass{
+  text-transform: uppercase;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 15px;
+  font-weight:lighter;
+  cursor: pointer;
+}
+
+.ContainerLeft .mainLogin .formBG .submit .lostPass a{
+  text-decoration: none;
+  color: #fff;
+}
+/* header text */
+
+.ContainerLeft header .textRec, .ContainerLeft header .textPay{
+  color: #00569b;
+  font-family: "Open Sans";
+  font-size: 26px;
+}
+section.ContainerLeft > header:nth-child(4){
+  padding-top: 18px;
+}
+.ContainerLeft header .textRec{
+  font-weight:100;
+}
+.ContainerLeft header .textPay{
+  color: #00569b;
+  font-weight:900;
+  font-style: italic;
+  margin-left: 5px;
+}
+
+.ContainerLeft header .lightText{
+  font-weight:400;
+  font-size: 14px;
+  line-height: 1.4;
+}
+/* nav icon  */
+.ContainerLeft header .main-menu{
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-top: 27px;
+}
+
+.ContainerLeft header .main-menu .nav-icon{
+  width: 60px;
+  margin: 0px;
+  cursor: pointer;
+}
+.ContainerLeft > header:nth-child(4) > ul > li{
+  display: inline-block;
+  padding: 0 10px;
+  text-align: center;
+}
+.ContainerLeft > header:nth-child(4) > ul > li a{
+text-decoration: none;
+text-align: center;
+font-size: 12px;
+font-weight: 300;
+}
+
+.ContainerLeft > header:nth-child(4) > ul > li .iText{
+  font-size: 12px;
+  font-weight: 400;
+  color: #7c7b7d;
+}
+
+/* payment image */
+
+#payment{
+  width: 355px;
+  margin-top: 43px;
+  margin-left: 44px;
+}
+
+.paytext{
+  font-size: 16px;
+  color: #fff;
+  padding: 0px;
+  margin-left: 69px;
+}
+.copyrights{
+  width: 380px;
+  background-color: #005dac;
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.copyrights p{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 5px;  
+  margin-left: 5px;
+  box-shadow: -7px 11px 14px -11px #000;
+}
+
+#smileCloud{
+  width: 200px;
+}
+
+
+/* botton hover and active color */
+.itemsHoverOpactity{
+  opacity: 1;
+}
+
+.itemsOutOpactity{
+  opacity: 0.14;
+}
+
+.itemsHoverColor{
+  fill: #2B3990;
+}
+
+.itemsOutColorOne{
+  fill: #D4EAFF;
+}
+.itemsOutColorTwo{
+  fill: #D4EAFF;
+}
+
+.itemsOutColorThree{
+  fill: #FFFFFF;
+}
+.itemsHoverLine{
+  fill: #fff;
+}
+
+.itemsOutLine{
+  fill: #2F55A0;
+}
+.itemsHoverText{
+  color: #2B3990;
+}
+.itemsOutText{
+  color: #7c7b7d;
+}
+
+/* travel page */
+.transport{
+  position: absolute;
+  left: -140px;
+  bottom: 0px;
+}
+
+/* money transfer page */
+
+.moneyTransform{
+  position: absolute;
+  left: -261px;
+  top: 260px;
+}
+
+.moneyPayText{
+  font-size: 14px;
+  color: #fff;
+  padding: 0px;
+  margin-left: 48px;
+}
+/* many more */
+
+.manymore{
+  position: absolute;
+  left: -150px;
+  bottom: 0px;
+}
+
+/* follower */
+
+.follower {
+  width: 50px;
+  height: 50px;
+  /* background-color: #005dac; */
+  border:  2px solid #005dac;
+  border-radius: 30px;
+  pointer-events: none;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  position: fixed;
+  z-index: 1000;
+  transform: translateX(-50%) translateY(-50%);
+}
